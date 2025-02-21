@@ -84,7 +84,15 @@ function onWindowClose() {
 }
 
 // Initialize Neutralino
+// Initialize Neutralino
 Neutralino.init();
+
+// Hide the window initially
+Neutralino.window.setOptions({ hidden: true });
+
+setTimeout(() => {
+    Neutralino.window.show();  // Show the window after 1 second
+}, 1000);
 
 // Register event listeners
 Neutralino.events.on("trayMenuItemClicked", onTrayMenuItemClicked);
@@ -97,3 +105,4 @@ if(NL_OS != "Darwin") { // TODO: Fix https://github.com/neutralinojs/neutralinoj
 
 // Display app information
 showInfo();
+
